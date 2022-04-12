@@ -3,15 +3,11 @@ Rails.application.routes.draw do
     root to: "dashboards#show"
   end
 
-# constraints Clearance::Constraints::SignedOut.new do
-#     root to: 'homes#show'
-#   end
-
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, only: [:create]
-  resource :shouts, only: [:create]
+  resources :shouts, only: [:create, :show]
 
-  resources :users, only: [:create] do
+  resources :users, only: [:create, :show] do
     resource :password,
       controller: "clearance/passwords",
       only: [:edit, :update]
