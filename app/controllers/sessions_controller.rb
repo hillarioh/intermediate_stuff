@@ -1,5 +1,10 @@
 class SessionsController < Clearance::SessionsController
 
+    # def create
+    #     super
+    #     session[:current_user_id]  ||= @user.id if @user 
+    # end
+
     private
     def authenticate(_)
         super(session_params)
