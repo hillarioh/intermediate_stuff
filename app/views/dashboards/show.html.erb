@@ -1,8 +1,10 @@
 <h1>Dashboards</h1>
 <h2>Signed in as: <%= current_user.email %></h2>
 <%= form_for @shout do |form| %>
-<%= form.text_field :body, placeholder: "shout here!", required: true %>
-<%= form.submit "Shout!" %>
+    <%= form.fields_for :content do |content_form| %>
+        <%= content_form.text_field :body, placeholder: "shout here!", required: true %>
+    <% end %>
+    <%= form.submit "Shout!" %>
 <% end %>
 
 <%= render @shouts %>
