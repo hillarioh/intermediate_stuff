@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+    before_action :require_login
     def create
         like = current_user.like(shout)
         redirect_to root_path

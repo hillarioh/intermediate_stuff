@@ -3,4 +3,8 @@ class Guest
         ""
     end
 
+    def liked?(_)
+        false
+    end
+
 end
