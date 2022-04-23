@@ -2,7 +2,7 @@
 <h2>Signed in as: <%= current_user.email %></h2>
 
 <%= shout_form_for(TextShout) do |form| %>
-    <%= form.text_field :body, placeholder: "Shout here!%", required: true %>
+    <%= form.text_field :body, placeholder: "Shout here!", required: true %>
 <% end %>
 
 <%= shout_form_for(PhotoShout) do |form| %>

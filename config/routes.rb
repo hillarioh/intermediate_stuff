@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     root to: "dashboards#show"
   end
 
+  post "text_shouts" => "shouts#create", defaults: {content_type: TextShout}
+  post "photo_shouts" => "shouts#create", defaults: {content_type: PhotoShout}
+
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, only: [:create]
   resources :shouts, only: [:create, :show] do
