@@ -1,13 +1,7 @@
 <h1>Dashboards</h1>
 <h2>Signed in as: <%= current_user.email %></h2>
 
-<%= shout_form_for(TextShout) do |form| %>
-    <%= form.text_field :body, placeholder: "Shout here!", required: true %>
-<% end %>
-
-<%= shout_form_for(PhotoShout) do |form| %>
-    <%= form.file_field :image, required: true %>
-<% end %>
-
+<%= render "shouts/text_shout" %>
+<%= render "shouts/photo_shout" %>
 
 <%= render @shouts %>
