@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       delete "unlike" => "likes#destroy"
     end
   end
+  resources :hashtags, only: [:show]
 
   resources :users, only: [:create, :show] do
     resources :followers, only: [:index]
