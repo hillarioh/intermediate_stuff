@@ -23,10 +23,6 @@ class User < ApplicationRecord
     followed_users.delete(user)
   end
 
-  def timeline_shouts
-    Shout.where(user_id: followed_user_ids + [id])
-  end
-
   def following?(user)
     followed_user_ids.include?(user.id)
   end
